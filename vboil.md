@@ -103,4 +103,5 @@ VB Oil provides dynamic reporting capabilities to meet internal and regulatory r
 
 ## Known Issues / Future Improvements
 - The project is feature-rich, but the UI/UX needs improvement for faster client work.
+- Code refactorization and code splitting.
 - Implementation of a map for a single job.
