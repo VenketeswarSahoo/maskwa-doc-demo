@@ -63,7 +63,43 @@ VB Oil provides dynamic reporting capabilities to meet internal and regulatory r
 <br/>
 
 ## Folder Structure
-
+```
+├── app
+│   ├── (auth)                  # Authentication routes
+│   ├── (authenticated)         # Application routes (Protected)
+│   │   ├── dashboard           # Dashboard page
+│   │   ├── job-list            # Job management pages
+│   │   ├── customers           # Customer management
+│   │   ├── drivers             # Driver management
+│   │   ├── weigh-in            # Weigh-in processing
+│   │   ├── reports             # Reporting features
+│   │   └── settings            # Application settings
+│   ├── globals.css             # Global styles
+│   └── layout.tsx              # Root layout
+├── components
+│   ├── dashboard               # Dashboard specific components
+│   ├── job-list                # Job list components
+│   ├── ui                      # Reusable UI components (Shadcn UI)
+│   ├── form                    # Form components
+│   ├── map                     # Map integration components
+│   └── settings                # Settings components
+├── config                      # API configurations
+├── contexts                    # React contexts
+├── hooks                       # Custom hooks
+├── lib
+│   ├── api                     # API configurations
+│   ├── cache                   
+│   ├── export                  # excel or csv export functions
+│   ├── schema                  # api response schema
+│   ├── server                  # api services
+│   └── store                   # zutestand stores
+├── providers                   # all providers
+├── public                      # Static assets
+├── script                      # pwa and other generation script
+├── types                       # Type definitions
+├── utils                       # Utility functions
+└── README.md
+```
 
 ## Known Issues / Future Improvements
 - The project is feature-rich, but the UI/UX needs improvement for faster client work.
