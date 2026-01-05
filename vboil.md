@@ -16,6 +16,69 @@ GMT Time: The software uses GMT, causing date discrepancies when daily reports a
 <br/>
 <br/>
 
+```mermaid
+graph TD
+
+    %% ========== DAILY OPERATIONAL FLOW ==========
+    A["Admin Creates Job - job-list"] --> B["Assign Driver - drivers"]
+    B --> C["Live Tracking Enabled - map"]
+    C --> D["Driver Views Assigned Jobs - dashboard"]
+    D --> E["Driver Picks Up SKU - job execution"]
+    E --> F["Driver Returns to Yard - weigh-in process"]
+    F --> G["Admin Records Weigh-Ins - weigh-in module"]
+    G --> H["Job Data Saved to System"]
+
+    %% ========== REPORTING & ANALYTICS (SEPARATE FEATURE) ==========
+    subgraph Reports_and_Analytics["Reporting & Analytics Features"]
+        H --> I["Generate Docket Reports - reports/docket"]
+        H --> J["Compile ARMA Reports - reports/arma"]
+        H --> K["Driver Collection Reports"]
+        H --> L["Collector Summary Reports"]
+        H --> M["Total Collection Reports"]
+    end
+
+    %% ========== ADDITIONAL FEATURE MODULES ==========
+    subgraph Admin_Features["Admin & System Management"]
+        O["Customer Management - customers"]
+        P["Driver Management - drivers"]
+        Q["Truck & SKU Management - settings"]
+        R["Region & Zone Management - settings/region"]
+        S["System Configuration & Settings - settings"]
+    end
+
+    %% CONNECTIONS BETWEEN CORE AND MODULES
+    A --> O
+    A --> P
+    A --> Q
+    A --> R
+
+    %% ========== COLORS ==========
+    style A fill:#f8cecc,stroke:#b85450,stroke-width:2px
+    style B fill:#f8cecc,stroke:#b85450,stroke-width:2px
+    style C fill:#d0e0e3,stroke:#6fa8dc,stroke-width:2px
+    style D fill:#fff2cc,stroke:#d6b656,stroke-width:2px
+    style E fill:#fff2cc,stroke:#d6b656,stroke-width:2px
+    style F fill:#cce5ff,stroke:#6fa8dc,stroke-width:2px
+    style G fill:#c9daf8,stroke:#6d9eeb,stroke-width:2px
+    style H fill:#d5e8d4,stroke:#82b366,stroke-width:2px
+
+    style I fill:#e1d5e7,stroke:#9673a6,stroke-width:2px
+    style J fill:#e1d5e7,stroke:#9673a6,stroke-width:2px
+    style K fill:#e1d5e7,stroke:#9673a6,stroke-width:2px
+    style L fill:#e1d5e7,stroke:#9673a6,stroke-width:2px
+    style M fill:#d9ead3,stroke:#6aa84f,stroke-width:2px
+
+    style O fill:#f8cecc,stroke:#b85450,stroke-width:2px
+    style P fill:#f8cecc,stroke:#b85450,stroke-width:2px
+    style Q fill:#f8cecc,stroke:#b85450,stroke-width:2px
+    style R fill:#f8cecc,stroke:#b85450,stroke-width:2px
+    style S fill:#d9ead3,stroke:#6aa84f,stroke-width:2px
+
+```
+
+<br/>
+<br/>
+
 ## Tech Stack
 **Frontend:** Next.js (React + TypeScript) <br/>
 **Styling:** TailwindCSS + Radix UI + Framer Motion <br/>
